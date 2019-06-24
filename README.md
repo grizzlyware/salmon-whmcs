@@ -1,7 +1,7 @@
 <p align="center"><img src="./assets/images/salmon_splash.svg" alt="Salmon splash image" width="80%" /></p>
 
 # Salmon for WHMCS
-Extended functionality for WHMCS models
+Extended functionality for WHMCS models, useful helpers. Built with the parent [Salmon](https://github.com/grizzlyware/salmon) library.
 
 ## Installation
 `composer require grizzlyware/salmon-whmcs`
