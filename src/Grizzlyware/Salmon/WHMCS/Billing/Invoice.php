@@ -1,16 +1,15 @@
 <?php
 
-namespace Grizzlyware\Salmon\WHMCS\User\Client;
+namespace Grizzlyware\Salmon\WHMCS\Billing;
 
 use Grizzlyware\Salmon\WHMCS\User\Client;
 
-class Contact extends \WHMCS\User\Client\Contact
+class Invoice extends \WHMCS\Billing\Invoice
 {
 	public function client()
 	{
 		return $this->belongsTo(Client::class, 'userid');
 	}
 }
-
 
 
