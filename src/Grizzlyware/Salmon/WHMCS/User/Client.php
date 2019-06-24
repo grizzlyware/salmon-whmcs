@@ -4,6 +4,7 @@ namespace Grizzlyware\Salmon\WHMCS\User;
 
 use Grizzlyware\Salmon\WHMCS\Billing\Invoice;
 use Grizzlyware\Salmon\WHMCS\Domain\Domain;
+use Grizzlyware\Salmon\WHMCS\Service\Service;
 use Grizzlyware\Salmon\WHMCS\User\Client\Contact;
 
 class Client extends \WHMCS\User\Client
@@ -21,6 +22,11 @@ class Client extends \WHMCS\User\Client
 	public function domains()
 	{
 		return $this->hasMany(Domain::class, 'userid');
+	}
+
+	public function services()
+	{
+		return $this->hasMany(Service::class, 'userid');
 	}
 }
 
