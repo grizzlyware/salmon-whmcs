@@ -1,0 +1,5 @@
+{
+    "require": {
+        "grizzlyware/salmon-whmcs": "~1"
+    }
+}
