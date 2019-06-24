@@ -2,3 +2,6 @@
 
 # Salmon for WHMCS
 Extended functionality for WHMCS models
+
+## Installation
+`composer require grizzlyware/salmon-whmcs`
