@@ -9,7 +9,7 @@ Extended functionality for WHMCS models, useful helpers. Built with the parent [
 `composer require grizzlyware/salmon-whmcs`
 
 ### Via WHMCS addon module
-We're working on creating a WHMCS addon module, which will make all of the Salmon classes and functionality available globally inside WHMCS, without having to use Composer. *Great if you just need to use a certain function for a small modification.*
+*Great if you just need to use a certain function for a small modification.* Just [download and install](/dist/whmcs/modules/addons/salmon.zip) the WHMCS addons module for Salmon.
 
 ## Usage
 You can treat all the WHMCS classes supported by Salmon as you would the default WHMCS ones, as they extend the original WHMCS classes. For starters, you will benefit from additional attributes and scopes, as well as code completion for your IDE as it'll be able to read the Salmon code!
