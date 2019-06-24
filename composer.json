@@ -14,7 +14,7 @@
   "require":
   {
     "php": ">=5.6.0",
-    "grizzlyware/salmon": "1.0.*"
+    "grizzlyware/salmon": "~1"
   },
   "autoload":
   {
