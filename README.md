@@ -5,3 +5,6 @@ Extended functionality for WHMCS models
 
 ## Installation
 `composer require grizzlyware/salmon-whmcs`
+
+## Usage
+You can treat all the WHMCS classes supported by Salmon as you would the default WHMCS ones, as they extend the original WHMCS classes. For starters, you will benefit from additional attributes and scopes, as well as code completion for your IDE as it'll be able to read the Salmon code!
