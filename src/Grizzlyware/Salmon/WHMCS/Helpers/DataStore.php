@@ -9,6 +9,8 @@ use Illuminate\Database\Schema\Blueprint;
 
 class DataStore
 {
+	const EMPTY_VALUE_INDEX = 'WHMCS_SALMON_EMPTY_DATASTORE_VALUE_INDEX';
+
 	public static function get($relType, $relId, $key)
 	{
 		$item = self::getModel($relType, $relId, $key);
@@ -24,7 +26,7 @@ class DataStore
 		return Item::relType($relType)->relId($relId)->key($key)->first();
 	}
 
-	public static function set($relType, $relId, $key, $value)
+	public static function set($relType, $relId, $key, $value, $valueIndex = self::EMPTY_VALUE_INDEX)
 	{
 		$item = self::getModel($relType, $relId, $key);
 
@@ -37,6 +39,7 @@ class DataStore
 		}
 
 		$item->value = $value;
+		if($valueIndex != self::EMPTY_VALUE_INDEX) $item->value_index = $valueIndex;
 		$item->save();
 	}
 
