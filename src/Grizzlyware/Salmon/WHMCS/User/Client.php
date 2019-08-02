@@ -9,6 +9,8 @@ use Grizzlyware\Salmon\WHMCS\User\Client\Contact;
 
 class Client extends \WHMCS\User\Client
 {
+	use CanBeLabelled;
+
 	public function contacts()
 	{
 		return $this->hasMany(Contact::class, 'userid');
