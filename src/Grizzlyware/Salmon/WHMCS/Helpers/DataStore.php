@@ -19,6 +19,8 @@ class DataStore
 	public static function getModel($relType, $relId, $key)
 	{
 		self::ensureItemsTableExists();
+		self::ensureItemsTableUpdated();
+
 		return Item::relType($relType)->relId($relId)->key($key)->first();
 	}
 
@@ -55,6 +57,7 @@ class DataStore
 			$table->unsignedBigInteger('rel_id')->index();
 			$table->string('key')->index();
 			$table->longText('value');
+			$table->string('value_index')->nullable()->index();
 			$table->timestamps();
 		});
 	}

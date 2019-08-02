@@ -23,6 +23,11 @@ class Item extends Model
 		$query->where('key', $key);
 	}
 
+	public function scopeValueIndex($query, $valueIndex)
+	{
+		$query->where('value_index', $valueIndex);
+	}
+
 	public function getValueAttribute()
 	{
 		return unserialize($this->attributes['value']);
