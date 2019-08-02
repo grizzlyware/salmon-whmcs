@@ -21,8 +21,6 @@ class DataStore
 	public static function getModel($relType, $relId, $key)
 	{
 		self::ensureItemsTableExists();
-		self::ensureItemsTableUpdated();
-
 		return Item::relType($relType)->relId($relId)->key($key)->first();
 	}
 
