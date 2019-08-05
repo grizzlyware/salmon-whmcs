@@ -13,6 +13,11 @@ class Contact extends \WHMCS\User\Client\Contact
 	{
 		return $this->belongsTo(Client::class, 'userid');
 	}
+
+	public function log($message)
+	{
+		$this->client->log("[Contact ID: {$this->id}]: {$message}");
+	}
 }
 
 

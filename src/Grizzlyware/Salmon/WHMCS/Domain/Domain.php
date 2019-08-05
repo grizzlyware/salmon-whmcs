@@ -24,5 +24,10 @@ class Domain extends \WHMCS\Domain\Domain
 	{
 		return $this->hasMany(Item::class, 'relid')->forDomainRenewal();
 	}
+
+	public function log($message)
+	{
+		$this->client->log("[Domain ID: {$this->id}]: {$message}");
+	}
 }
 

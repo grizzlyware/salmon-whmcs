@@ -10,6 +10,11 @@ class Invoice extends \WHMCS\Billing\Invoice
 	{
 		return $this->belongsTo(Client::class, 'userid');
 	}
+
+	public function log($message)
+	{
+		$this->client->log("[Invoice ID: {$this->id}]: {$message}");
+	}
 }
 
 

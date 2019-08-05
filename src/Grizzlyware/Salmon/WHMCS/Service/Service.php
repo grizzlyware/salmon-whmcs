@@ -27,6 +27,11 @@ class Service extends \WHMCS\Service\Service
 	{
 		return $this->hasMany(ConfigurableOptionValue::class, 'relid');
 	}
+
+	public function log($message)
+	{
+		$this->client->log("[Service ID: {$this->id}]: {$message}");
+	}
 }
 
 
