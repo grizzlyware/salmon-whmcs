@@ -30,6 +30,11 @@ class Client extends \WHMCS\User\Client
 	{
 		return $this->hasMany(Service::class, 'userid');
 	}
+
+	public function log($message)
+	{
+		\logActivity($message, $this->id);
+	}
 }
 
 
