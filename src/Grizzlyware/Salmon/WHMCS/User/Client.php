@@ -42,7 +42,7 @@ class Client extends \WHMCS\User\Client
 	{
 		return $this->belongsTo(Group::class, 'groupid');
 	}
-	
+
 	public function currency()
 	{
 		return $this->belongsTo(Currency::class, 'currencyid');
