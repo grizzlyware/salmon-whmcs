@@ -4,6 +4,7 @@ namespace Grizzlyware\Salmon\WHMCS\User;
 
 use Grizzlyware\Salmon\WHMCS\Billing\Currency;
 use Grizzlyware\Salmon\WHMCS\Billing\Invoice;
+use Grizzlyware\Salmon\WHMCS\CustomField\CustomFieldStore;
 use Grizzlyware\Salmon\WHMCS\Domain\Domain;
 use Grizzlyware\Salmon\WHMCS\Service\Service;
 use Grizzlyware\Salmon\WHMCS\User\Client\Contact;
@@ -12,6 +13,8 @@ use Grizzlyware\Salmon\WHMCS\User\Client\Group;
 class Client extends \WHMCS\User\Client
 {
 	use CanBeLabelled;
+
+	protected $customFieldStore;
 
 	public function contacts()
 	{
@@ -46,6 +49,12 @@ class Client extends \WHMCS\User\Client
 	public function currency()
 	{
 		return $this->belongsTo(Currency::class, 'currencyid');
+	}
+
+	public function customFieldStore()
+	{
+		if(!$this->customFieldStore) $this->customFieldStore = new CustomFieldStore($this);
+		return $this->customFieldStore;
 	}
 }
 

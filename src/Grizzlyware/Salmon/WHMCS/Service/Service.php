@@ -2,12 +2,15 @@
 
 namespace Grizzlyware\Salmon\WHMCS\Service;
 
+use Grizzlyware\Salmon\WHMCS\CustomField\CustomFieldStore;
 use Grizzlyware\Salmon\WHMCS\Helpers\ConfigurableOptions as ConfigurableOptionsHelper;
 use Grizzlyware\Salmon\WHMCS\Product\Product;
 use Grizzlyware\Salmon\WHMCS\User\Client;
 
 class Service extends \WHMCS\Service\Service
 {
+	protected $customFieldStore;
+
 	public function client()
 	{
 		return $this->belongsTo(Client::class, 'userid');
@@ -31,6 +34,12 @@ class Service extends \WHMCS\Service\Service
 	public function log($message)
 	{
 		$this->client->log("[Service ID: {$this->id}]: {$message}");
+	}
+
+	public function customFieldStore()
+	{
+		if(!$this->customFieldStore) $this->customFieldStore = new CustomFieldStore($this);
+		return $this->customFieldStore;
 	}
 }
 
