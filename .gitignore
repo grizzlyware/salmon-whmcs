@@ -3,3 +3,4 @@ composer.lock
 .idea
 .DS_Store
 /dist/whmcs/modules/addons/salmon/vendor
+/dist/whmcs/modules/addons/salmon.zip
