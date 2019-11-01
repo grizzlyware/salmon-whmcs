@@ -7,6 +7,7 @@ use Grizzlyware\Salmon\WHMCS\Billing\Invoice;
 use Grizzlyware\Salmon\WHMCS\CustomField\CustomFieldStore;
 use Grizzlyware\Salmon\WHMCS\Domain\Domain;
 use Grizzlyware\Salmon\WHMCS\Service\Service;
+use Grizzlyware\Salmon\WHMCS\User\Client\Affiliate;
 use Grizzlyware\Salmon\WHMCS\User\Client\Contact;
 use Grizzlyware\Salmon\WHMCS\User\Client\Group;
 
@@ -15,6 +16,11 @@ class Client extends \WHMCS\User\Client
 	use CanBeLabelled;
 
 	protected $customFieldStore;
+
+	public function affiliate()
+	{
+		return $this->hasOne(Affiliate::class, 'clientid');
+	}
 
 	public function contacts()
 	{
