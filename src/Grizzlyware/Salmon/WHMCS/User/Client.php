@@ -10,6 +10,7 @@ use Grizzlyware\Salmon\WHMCS\Service\Service;
 use Grizzlyware\Salmon\WHMCS\User\Client\Affiliate;
 use Grizzlyware\Salmon\WHMCS\User\Client\Contact;
 use Grizzlyware\Salmon\WHMCS\User\Client\Group;
+use Grizzlyware\Salmon\WHMCS\User\Traits\CanBeLabelled;
 
 class Client extends \WHMCS\User\Client
 {

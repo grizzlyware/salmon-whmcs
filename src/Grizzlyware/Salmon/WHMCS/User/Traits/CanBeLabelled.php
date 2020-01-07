@@ -1,6 +1,6 @@
 <?php
 
-namespace Grizzlyware\Salmon\WHMCS\User;
+namespace Grizzlyware\Salmon\WHMCS\User\Traits;
 
 trait CanBeLabelled
 {

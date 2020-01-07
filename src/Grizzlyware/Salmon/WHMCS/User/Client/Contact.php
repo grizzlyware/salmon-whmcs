@@ -2,7 +2,7 @@
 
 namespace Grizzlyware\Salmon\WHMCS\User\Client;
 
-use Grizzlyware\Salmon\WHMCS\User\CanBeLabelled;
+use Grizzlyware\Salmon\WHMCS\User\Traits\CanBeLabelled;
 use Grizzlyware\Salmon\WHMCS\User\Client;
 
 class Contact extends \WHMCS\User\Client\Contact
