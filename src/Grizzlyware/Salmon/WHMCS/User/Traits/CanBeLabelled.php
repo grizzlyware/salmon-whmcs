@@ -2,6 +2,10 @@
 
 namespace Grizzlyware\Salmon\WHMCS\User\Traits;
 
+/**
+ * @property-read string $label
+ * @property-read string $label_short
+ */
 trait CanBeLabelled
 {
 	public function getLabelAttribute()
