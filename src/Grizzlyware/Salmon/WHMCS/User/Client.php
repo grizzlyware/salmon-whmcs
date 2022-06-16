@@ -12,6 +12,23 @@ use Grizzlyware\Salmon\WHMCS\User\Client\Contact;
 use Grizzlyware\Salmon\WHMCS\User\Client\Group;
 use Grizzlyware\Salmon\WHMCS\User\Traits\CanBeLabelled;
 
+/**
+ * @property-read string $email
+ * @property-read int $id
+ * @method static self findOrFail(int $id)
+ * @method static self|null find(int $id)
+ * @property string $companyname
+ * @property string $address1
+ * @property string $address2
+ * @property string $city
+ * @property string $state
+ * @property string $postcode
+ * @property string $country
+ * @property string $phonenumber
+ * @property string $firstname
+ * @property string $lastname
+ * @property string $defaultgateway
+ */
 class Client extends \WHMCS\User\Client
 {
 	use CanBeLabelled;
