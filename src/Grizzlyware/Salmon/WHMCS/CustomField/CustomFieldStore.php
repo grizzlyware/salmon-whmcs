@@ -3,6 +3,7 @@
 namespace Grizzlyware\Salmon\WHMCS\CustomField;
 
 use Grizzlyware\Salmon\WHMCS\CustomField;
+use Grizzlyware\Salmon\WHMCS\Service\Addon;
 use Grizzlyware\Salmon\WHMCS\Service\Service;
 use Grizzlyware\Salmon\WHMCS\User\Client;
 use Illuminate\Support\Str;
@@ -42,6 +43,10 @@ class CustomFieldStore
 		elseif($this->relatedModel instanceof Client)
 		{
 			$this->customFields = CustomField::clientFields()->get();
+		}
+		elseif($this->relatedModel instanceof Addon)
+		{
+			$this->customFields = CustomField::addonFields()->get();
 		}
 		else
 		{
