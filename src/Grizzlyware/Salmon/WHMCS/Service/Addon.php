@@ -6,6 +6,7 @@ use Grizzlyware\Salmon\WHMCS\CustomField\CustomFieldStore;
 
 /**
  * @property-read int $id
+ * @property int|null $addonid
  */
 class Addon extends \WHMCS\Service\Addon
 {

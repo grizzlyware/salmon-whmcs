@@ -46,7 +46,11 @@ class CustomFieldStore
 		}
 		elseif($this->relatedModel instanceof Addon)
 		{
-			$this->customFields = CustomField::addonFields()->get();
+			if ($this->relatedModel->addonid) {
+				$this->customFields = CustomField::addonFields($this->relatedModel->addonid)->get();
+			} else {
+				$this->customFields = \collect();
+			}
 		}
 		else
 		{

@@ -7,6 +7,10 @@ use Grizzlyware\Salmon\WHMCS\Helpers\ConfigurableOptions as ConfigurableOptionsH
 use Grizzlyware\Salmon\WHMCS\Product\Product;
 use Grizzlyware\Salmon\WHMCS\User\Client;
 
+/**
+ * @property-read int $id
+ * @property int $packageid
+ */
 class Service extends \WHMCS\Service\Service
 {
 	protected $customFieldStore;
