@@ -6,9 +6,14 @@ use Grizzlyware\Salmon\WHMCS\CustomField;
 use Grizzlyware\Salmon\WHMCS\Service\Addon;
 use Grizzlyware\Salmon\WHMCS\Service\Service;
 use Grizzlyware\Salmon\WHMCS\User\Client;
+use WHMCS\Model\AbstractModel;
 
-class CustomFieldValue extends \WHMCS\CustomField\CustomFieldValue
+class CustomFieldValue extends AbstractModel
 {
+    protected $table = "tblcustomfieldsvalues";
+    protected $columnMap = array("relatedId" => "relid");
+    protected $fillable = array("fieldid", "relid");
+
 	public function scopeFieldId($query, $fieldId)
 	{
 		$query->where('fieldid', $fieldId);
@@ -33,6 +38,11 @@ class CustomFieldValue extends \WHMCS\CustomField\CustomFieldValue
 	{
 		return $this->belongsTo(Service::class, "relid");
 	}
+
+    public function addon()
+    {
+        return $this->belongsTo(Addon::class, "relid");
+    }
 
 	public function getValueAttribute()
 	{
